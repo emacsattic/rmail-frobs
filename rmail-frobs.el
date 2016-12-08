@@ -3,7 +3,7 @@
 ;; Created: 1995-04-21
 ;; Public domain
 
-;; $Id: rmail-frobs.el,v 1.1 1995/06/01 14:56:05 friedman Exp $
+;; $Id: rmail-frobs.el,v 1.2 2016/11/24 20:24:53 friedman Exp $
 
 ;; lpr.el doesn't provide itself.
 (or (fboundp 'print-region-1)
@@ -113,7 +113,7 @@
           (setq beg (point))
           (skip-chars-forward "0-9")
           (setq end (point))
-          (setq msglist (cons (string-to-int (buffer-substring beg end))
+          (setq msglist (cons (string-to-number (buffer-substring beg end))
                               msglist))
           (forward-line 1))))
     (nreverse msglist)))
